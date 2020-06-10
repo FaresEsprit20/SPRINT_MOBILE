@@ -11,7 +11,7 @@ import com.codename1.io.NetworkEvent;
 import com.codename1.io.NetworkManager;
 import com.codename1.ui.events.ActionListener;
 import com.mycompany.myapp.entities.Livraison;
-import com.mycompany.myapp.entities.Reclamation;
+import com.mycompany.myapp.entities.Reclamations;
 import com.mycompany.myapp.entities.User;
 import com.mycompany.myapp.utils.Statics;
 import java.io.IOException;

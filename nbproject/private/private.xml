@@ -6,13 +6,17 @@
         <group>
             <file>file:/C:/Users/Fares/Documents/NetBeansProjects/Pi-Project/src/com/mycompany/myapp/entities/DefaultCategoryRenderer.java</file>
             <file>file:/C:/Users/Fares/Documents/NetBeansProjects/Pi-Project/src/com/mycompany/myapp/gui/MenuForm.java</file>
+            <file>file:/C:/Users/Fares/Documents/NetBeansProjects/Pi-Project/src/com/mycompany/myapp/services/ServiceUsers.java</file>
+            <file>file:/C:/Users/Fares/Documents/NetBeansProjects/Pi-Project/src/com/mycompany/myapp/gui/ListReclamations.java</file>
             <file>file:/C:/Users/Fares/Documents/NetBeansProjects/Pi-Project/src/com/mycompany/myapp/entities/Statistiques.java</file>
             <file>file:/C:/Users/Fares/Documents/NetBeansProjects/Pi-Project/src/com/mycompany/myapp/services/Serviceevenements.java</file>
             <file>file:/C:/Users/Fares/Documents/NetBeansProjects/Pi-Project/src/com/mycompany/myapp/gui/AddTaskForm.java</file>
-            <file>file:/C:/Users/Fares/Documents/NetBeansProjects/Pi-Project/src/com/mycompany/myapp/gui/ListTasksForm.java</file>
             <file>file:/C:/Users/Fares/Documents/NetBeansProjects/Pi-Project/src/com/mycompany/myapp/utils/Statics.java</file>
+            <file>file:/C:/Users/Fares/Documents/NetBeansProjects/Pi-Project/src/com/mycompany/myapp/MyApplication.java</file>
+            <file>file:/C:/Users/Fares/Documents/NetBeansProjects/Pi-Project/src/com/mycompany/myapp/gui/ListTasksForm.java</file>
             <file>file:/C:/Users/Fares/Documents/NetBeansProjects/Pi-Project/src/com/mycompany/myapp/services/ServiceTask.java</file>
             <file>file:/C:/Users/Fares/Documents/NetBeansProjects/Pi-Project/src/com/mycompany/myapp/gui/listeeventform.java</file>
+            <file>file:/C:/Users/Fares/Documents/NetBeansProjects/Pi-Project/src/com/mycompany/myapp/entities/Reclamations.java</file>
         </group>
     </open-files>
 </project-private>

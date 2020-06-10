@@ -8,15 +8,15 @@ package com.mycompany.myapp.entities;
  *
  * @author Fares
  */
-public class Reclamation {
+public class Reclamations {
     private int id,livr,cours;
     private String titre, sujet, LivraisonId,dateCreation;
 
-    public Reclamation() {
+    public Reclamations() {
 
     }
 
-    public Reclamation(String titre, String sujet, String LivraisonId) {
+    public Reclamations(String titre, String sujet, String LivraisonId) {
         this.titre = titre;
         this.sujet = sujet;
         this.LivraisonId = LivraisonId;

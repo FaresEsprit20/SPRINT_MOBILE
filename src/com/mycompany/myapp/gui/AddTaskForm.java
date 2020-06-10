@@ -21,7 +21,7 @@ import com.codename1.ui.layouts.FlowLayout;
 import com.codename1.ui.plaf.UIManager;
 import com.codename1.ui.util.Resources;
 import com.mycompany.myapp.entities.Livraison;
-import com.mycompany.myapp.entities.Reclamation;
+import com.mycompany.myapp.entities.Reclamations;
 import com.mycompany.myapp.services.ServiceTask;
 import java.io.IOException;
 
@@ -56,7 +56,7 @@ public class AddTaskForm extends Form {
                     Dialog.show("Alert", "Champ Titre Maximum 20 et Champ Sujet Minimum 150 Champ Livraison doit etre une valeur Numerique et Déja Existente", new Command("OK"));
                 } else {
                     try {
-                        Reclamation t = new Reclamation();
+                        Reclamations t = new Reclamations();
                         t.setTitre(tfTitre.getText());
                         t.setSujet(tfSujet.getText());
                         t.setLivraisonId(tfLivraison.getText());

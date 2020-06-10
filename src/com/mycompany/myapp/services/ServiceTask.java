@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package com.mycompany.myapp.services;
-
 import com.codename1.io.CharArrayReader;
 import com.codename1.io.ConnectionRequest;
 import com.codename1.io.JSONParser;
@@ -14,7 +13,7 @@ import com.codename1.ui.events.ActionListener;
 import com.mycompany.myapp.entities.Client;
 import com.mycompany.myapp.entities.Agent;
 import com.mycompany.myapp.entities.Livraison;
-import com.mycompany.myapp.entities.Reclamation;
+import com.mycompany.myapp.entities.Reclamations;
 import com.mycompany.myapp.entities.Session;
 import com.mycompany.myapp.entities.Statistiques;
 import com.mycompany.myapp.utils.Statics;
@@ -33,7 +32,7 @@ public class ServiceTask {
 
     public ArrayList<Livraison> tasks;
     public ArrayList<Statistiques> stats;
-    public ArrayList<Reclamation> recs;
+    public ArrayList<Reclamations> recs;
     public static ServiceTask instance = null;
     public boolean resultOK;
     private ConnectionRequest req;
@@ -49,8 +48,8 @@ public class ServiceTask {
         return instance;
     }
 
-    public boolean addTask(Reclamation t) throws Exception{
-        String url = Statics.BASE_URL + "/reclamation/" + t.getTitre() + "/" + t.getSujet() + "/" + t.getLivraisonId() +"/"+Session.getCurrentSession().getId() + "/add/";
+    public boolean addTask(Reclamations t) throws Exception{
+        String url = Statics.BASE_URL + "/reclamations/" + t.getTitre() + "/" + t.getSujet() + "/" + t.getLivraisonId() +"/"+Session.getCurrentSession().getId() + "/add/";
         req.setUrl(url);
         req.addResponseListener(new ActionListener<NetworkEvent>() {
             @Override
@@ -150,7 +149,7 @@ public class ServiceTask {
         return tasks;
     }
 
-    public ArrayList<Reclamation> parseRecs(String jsonText) {
+    public ArrayList<Reclamations> parseRecs(String jsonText) {
         try {
             recs = new ArrayList<>();
             JSONParser j = new JSONParser();
@@ -158,7 +157,7 @@ public class ServiceTask {
 
             List<Map<String, Object>> list = (List<Map<String, Object>>) tasksListJson.get("root");
             for (Map<String, Object> obj : list) {
-                Reclamation t = new Reclamation();
+                Reclamations t = new Reclamations();
                 float id = Float.parseFloat(obj.get("id").toString());
                 t.setId((int) id);
                 t.setTitre(obj.get("titre").toString());
@@ -219,7 +218,7 @@ public class ServiceTask {
     }
 
     public boolean deleteRec(int id) {
-        String url = Statics.BASE_URL + "/reclamation/view/" + id + "/delete";
+        String url = Statics.BASE_URL + "/reclamations/view/" + id + "/delete";
         req.setUrl(url);
         req.setPost(false);
         req.addResponseListener(new ActionListener<NetworkEvent>() {
@@ -233,7 +232,7 @@ public class ServiceTask {
     }
 
     public boolean editRec(int id, String titre, String sujet) {
-        String url = Statics.BASE_URL + "/reclamation/" + id + "/" + titre + "/" + sujet + "/edit/";
+        String url = Statics.BASE_URL + "/reclamations/" + id + "/" + titre + "/" + sujet + "/edit/";
         req.setUrl(url);
         req.setPost(false);
         req.addResponseListener(new ActionListener<NetworkEvent>() {
@@ -246,8 +245,8 @@ public class ServiceTask {
         return true;
     }
 
-    public ArrayList<Reclamation> getAllRecs(int id) {
-        String url = Statics.BASE_URL + "/reclamation/all/"+id;
+    public ArrayList<Reclamations> getAllRecs(int id) {
+        String url = Statics.BASE_URL + "/reclamations/all/"+id;
         req.setUrl(url);
         req.setPost(false);
         req.addResponseListener(new ActionListener<NetworkEvent>() {

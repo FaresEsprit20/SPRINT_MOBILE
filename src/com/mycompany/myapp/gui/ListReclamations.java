@@ -21,7 +21,7 @@ import com.codename1.ui.layouts.FlowLayout;
 import com.codename1.ui.plaf.UIManager;
 import com.codename1.ui.util.Resources;
 import com.mycompany.myapp.entities.Livraison;
-import com.mycompany.myapp.entities.Reclamation;
+import com.mycompany.myapp.entities.Reclamations;
 import com.mycompany.myapp.entities.Session;
 import com.mycompany.myapp.services.ServiceTask;
 import java.util.ArrayList;
@@ -43,19 +43,19 @@ public class ListReclamations extends Form {
         setLayout(new FlowLayout(BoxLayout.Y_AXIS));
         Container cnt = new Container(BoxLayout.y());
         cnt.setScrollableY(true);
-        List<Reclamation> list = new ArrayList();
+        List<Reclamations> list = new ArrayList();
         list = ServiceTask.getInstance().getAllRecs(Session.getCurrentSession().getId());
-        for (Reclamation p : list) {
+        for (Reclamations p : list) {
             System.out.println(p);
         }
-        for (Reclamation p : list) {
+        for (Reclamations p : list) {
             cnt.add(addItem(p));
         }
         add(cnt);
         getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, e -> previous.showBack());
     }
 
-    public Container addItem(Reclamation p) {
+    public Container addItem(Reclamations p) {
  theme = UIManager.initFirstTheme("/theme");
         Container cnt2 = new Container(BoxLayout.x());
         MultiButton mb = new MultiButton("ID  :  " + p.getId());
