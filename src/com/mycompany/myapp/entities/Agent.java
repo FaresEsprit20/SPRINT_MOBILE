@@ -5,8 +5,8 @@
  */
 package com.mycompany.myapp.entities;
 
-import org.apache.commons.lang.builder.ToStringBuilder;
 import java.util.List;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 
 /**
  *

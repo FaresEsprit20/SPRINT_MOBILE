@@ -5,7 +5,6 @@
  */
 package com.mycompany.myapp.entities;
 
-import org.apache.commons.lang.builder.ToStringBuilder;
 
 /**
  *
