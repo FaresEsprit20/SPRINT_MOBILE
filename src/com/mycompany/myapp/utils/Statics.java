@@ -10,7 +10,9 @@ package com.mycompany.myapp.utils;
  * @author bhk
  */
 public class Statics {
-    public static final String BASE_URL="http://localhost/pi-project/web/app_dev.php/api";
-     public static final String BASE_URL2="http://localhost/pi-project/web/app_dev.php/";
+    //http://localhost:8000/pi-project/web/app_dev.php/api"
+    public static final String BASE_URL="http://localhost:8000";
+    //"http://localhost:8000/pi-project/web/app_dev.php/
+     public static final String BASE_URL2="http://localhost:8000/";
     
 }

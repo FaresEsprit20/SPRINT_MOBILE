@@ -35,15 +35,17 @@ public class MenuForm extends Form {
        Label l1 = new Label("Choisir une Option");
 
         Button btnListTasks = new Button("Liste des Livraisons");
-        Button btnListRecs = new Button("Liste des Réclamations");
-        Button btnAddRecs = new Button("Ajouter une réclamation");
+        Button btnListRecFarah = new Button("Liste des Réclamations");
+        Button btnListRecs = new Button("Liste des Réclamations Concernant livraison");
+        Button btnAddRecs = new Button("Ajouter une réclamation Concernant livraison");
         Button btnStats = new Button("Statistiques");
         Button dec = new Button("Déconnection");
-
+       
+        btnListRecFarah.addActionListener(l -> new ReclamationIndex().show());
         btnListTasks.addActionListener(e -> new ListTasksForm(current).show());
         btnListRecs.addActionListener(e -> new ListReclamations(current).show());
         btnAddRecs.addActionListener(e -> new AddTaskForm(current).show());
-        cnt.addAll(l1,btnListTasks, btnListRecs, btnAddRecs, btnStats, dec);
+        cnt.addAll(l1,btnListRecFarah,btnListTasks, btnListRecs, btnAddRecs, btnStats, dec);
         addAll(cnt);
         dec.addActionListener( (e) -> {
               Session.close();
