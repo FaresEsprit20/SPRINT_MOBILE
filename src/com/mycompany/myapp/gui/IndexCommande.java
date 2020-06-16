@@ -7,6 +7,8 @@ package com.mycompany.myapp.gui;
 
 import com.codename1.components.InfiniteScrollAdapter;
 import com.codename1.components.MultiButton;
+import com.codename1.io.FileSystemStorage;
+import com.codename1.io.Util;
 import com.codename1.messaging.Message;
 import com.codename1.ui.Button;
 import com.codename1.ui.Command;
@@ -27,6 +29,7 @@ import com.codename1.ui.plaf.UIManager;
 import com.codename1.ui.util.Resources;
 import com.mycompany.myapp.entities.Commande;
 import com.mycompany.myapp.services.ServiceCommande;
+import java.io.IOException;
 import java.util.Date;
 
 /**
@@ -35,6 +38,7 @@ import java.util.Date;
  */
 public class IndexCommande extends Form {
          static Form  currentForm;
+         
 
   //  User User = Session.getCurrentSession();
 
@@ -51,10 +55,37 @@ Style s = UIManager.getInstance().getComponentStyle("MultiLine1");
         MultiButton[] cmps = new MultiButton[commandes.size()];
          FontImage e = FontImage.createMaterial(FontImage.MATERIAL_EDIT_ATTRIBUTES, s);
           FontImage d = FontImage.createMaterial(FontImage.MATERIAL_DELETE, s);
+          
+           
+                     
+              
+          
            Container cn = new Container(new BoxLayout(BoxLayout.Y_AXIS));
               TextField search=new TextField("","Search");
               Button Save = new Button("Search");
-              cn.addAll(search,Save);
+              
+               Button devGuide = new Button(" PDF");
+devGuide.addActionListener(epdf -> {
+    FileSystemStorage fs = FileSystemStorage.getInstance();
+    String fileName = fs.getAppHomePath() + "listeComande.pdf";
+    if(!fs.exists(fileName)) {
+        
+        try {
+            
+            Util.copy(Display.getInstance().getResourceAsStream(getClass(), "/listeComande.pdf"), fs.openOutputStream(fileName));
+        } catch (IOException ex) {
+            System.out.println("cc");
+        }
+
+        
+    }
+    Display.getInstance().execute(fileName);
+    
+});
+
+
+              
+              cn.addAll(devGuide,search,Save);
                 Save.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent evt) {
