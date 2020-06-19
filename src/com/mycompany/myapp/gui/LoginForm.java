@@ -69,6 +69,9 @@ private Resources theme;
                         password.setText("");
                         Session.start(User);
                        new AchrefMenuForm(current).show();
+                    }else if(User != null && User.getRoles().equals("ChefSite")){
+                        Session.start(User);
+                       new MenuChefsiteForm().show();
                     } else {
                         Dialog.show("Alert", "Authentification Failed", new Command("OK"));
                     }

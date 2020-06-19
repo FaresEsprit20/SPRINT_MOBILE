@@ -58,6 +58,8 @@ public class ServiceUsers {
                     UserL.setRoles("Agent");
                 }else if(UserListJson.get("role").toString().contains("ROLE_CLIENT")){
                        UserL.setRoles("Client");
+                }else if(UserListJson.get("role").toString().contains("ROLE_CHEF_SITE")){
+                       UserL.setRoles("ChefSite");
                 } else{
                     return null;
                 }

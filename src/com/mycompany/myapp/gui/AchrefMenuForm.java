@@ -14,6 +14,7 @@ import com.codename1.ui.layouts.FlowLayout;
 import com.codename1.ui.util.Resources;
 import com.mycompany.myapp.entities.DefaultCategoryRenderer;
 import com.mycompany.myapp.entities.Session;
+import java.io.IOException;
 
 /**
  *
@@ -34,6 +35,21 @@ public class AchrefMenuForm extends Form {
         Button btnAddevent = new Button("Ajouter un evenement");
         Button btnAddpart = new Button("Participer à un evenement");
         Button btnListevent = new Button("Liste des evenements");
+        
+        Button btnAddLoc = new Button("Louer Velo");
+        Button btnListLoc = new Button("Liste des location");
+        
+        btnListLoc.addActionListener(e -> {
+                    new ListeLocationForm(current, "user").show();
+                            });
+            btnAddLoc.addActionListener(e -> {
+                try {
+                    new AddLocationForm(current).show();
+                } catch (IOException ex) {
+                    System.out.println(ex.toString());
+                }
+                            });
+        
         Button dec = new Button("Déconnection");
         /*
         btnModifierEvenement.addActionListener(e -> new ModifierEvenement(current).show());
@@ -43,8 +59,11 @@ public class AchrefMenuForm extends Form {
         btnAddpart.addActionListener(e -> new parteventform(current).show());
 
         btnListevent.addActionListener(e -> new listeeventform(current, theme).show());
-        dec.addActionListener(e -> new LoginForm(current).show());
-        cnt.addAll(btnAddevent, btnAddpart, btnListevent, dec);
+        dec.addActionListener(e -> {
+            Session.close();
+            new LoginForm(current).show();
+                });
+        cnt.addAll(btnAddevent, btnAddpart, btnListevent, btnListLoc, btnAddLoc, dec);
         addAll(cnt);
 
         current.getToolbar()
