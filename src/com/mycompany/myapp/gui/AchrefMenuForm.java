@@ -36,6 +36,20 @@ public class AchrefMenuForm extends Form {
         Button btnAddpart = new Button("Participer à un evenement");
         Button btnListevent = new Button("Liste des evenements");
         
+        Button btnListRDV = new Button("Liste des rendez-vous");
+        Button btnAddRDV = new Button("Prendre un rendez-vous");
+        
+        btnListRDV.addActionListener(e ->{
+            try {
+                new RDVForm(current,"afficherrdv").show();
+            } catch (Exception ex) {
+                //Logger.getLogger(MenuForm.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        });
+        btnAddRDV.addActionListener(e -> {
+            new AddRDVForm(current).show(); 
+        });
+        
         Button btnAddLoc = new Button("Louer Velo");
         Button btnListLoc = new Button("Liste des location");
         
@@ -63,7 +77,7 @@ public class AchrefMenuForm extends Form {
             Session.close();
             new LoginForm(current).show();
                 });
-        cnt.addAll(btnAddevent, btnAddpart, btnListevent, btnListLoc, btnAddLoc, dec);
+        cnt.addAll(btnAddevent, btnAddpart, btnListevent, btnListLoc, btnAddLoc,btnListRDV, btnAddRDV, dec);
         addAll(cnt);
 
         current.getToolbar()

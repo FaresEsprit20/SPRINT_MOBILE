@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<resource majorVersion="1" minorVersion="11" useXmlUI="false">
+<resource majorVersion="1" minorVersion="9" useXmlUI="false">
     <image name="back-command.png" type="multi"  />
     <image name="border.png"  />
     <image name="Button.borderBottom_2.png" type="multi"  />
@@ -34,6 +34,7 @@
     <image name="ComboBox.sel#borderTop_1.png" type="multi"  />
     <image name="ComboBox.sel#borderTopL_1.png" type="multi"  />
     <image name="ComboBox.sel#borderTopR_1.png" type="multi"  />
+    <image name="confirme.png"  />
     <image name="Dialog.borderBottom_1.png" type="multi"  />
     <image name="Dialog.borderBottomL_1.png" type="multi"  />
     <image name="Dialog.borderBottomR_1.png" type="multi"  />
@@ -44,6 +45,8 @@
     <image name="Dialog.borderTopL_1.png" type="multi"  />
     <image name="Dialog.borderTopR_1.png" type="multi"  />
     <image name="edit.jpg"  />
+    <image name="enattente.png"  />
+    <image name="encours.png"  />
     <ui name="GUI 1" />
     <image name="image1.png"  />
     <image name="livraison.jpg"  />
@@ -57,9 +60,11 @@
     <image name="Menu.borderTop_1.png" type="multi"  />
     <image name="Menu.borderTopL_1.png" type="multi"  />
     <image name="Menu.borderTopR_1.png" type="multi"  />
+    <image name="noappointment.png"  />
     <image name="of_menu.png" type="multi"  />
     <image name="rec.png"  />
     <image name="reclam.jpg"  />
+    <image name="reparer.jpg"  />
     <image name="sliderEmpty.png" type="multi"  />
     <image name="sliderEmptyLeft.png" type="multi"  />
     <image name="sliderEmptyRight.png" type="multi"  />

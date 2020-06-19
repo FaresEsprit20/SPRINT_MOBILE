@@ -14,5 +14,6 @@ public class Statics {
     public static final String BASE_URL="http://localhost:8000";
     //"http://localhost:8000/pi-project/web/app_dev.php/
      public static final String BASE_URL2="http://localhost:8000/";
+     public static final String BASE_URL3="http://localhost:8000/maintenance/";
     
 }
